@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{011DF2D3-5AB6-4ECA-A8C5-DE5545CCE4A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Conti_Speed_S_50P</RootNamespace>
+    <AssemblyName>Conti Speed S 50P</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CAMERA.ICO</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Automation.BDaq, Version=1.0.1.0, Culture=neutral, PublicKeyToken=463f5928d60183a0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Automation.BDaq.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonModule">
+      <HintPath>Dll\CommonModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.4.5.1\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="OmronFins_TCP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\OmronFins_TCP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CsvHelper\CsvFileUltity.cs" />
+    <Compile Include="DisplayAndDataView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisplayAndDataView.Designer.cs">
+      <DependentUpon>DisplayAndDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisplayView.Designer.cs">
+      <DependentUpon>DisplayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataGridView.Designer.cs">
+      <DependentUpon>FormDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShowMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowMsg.Designer.cs">
+      <DependentUpon>FormShowMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOHelper\SingleCameraIO.cs" />
+    <Compile Include="FormShowAsynProg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowAsynProg.Designer.cs">
+      <DependentUpon>FormShowAsynProg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPasswordPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPasswordPrompt.Designer.cs">
+      <DependentUpon>FormPasswordPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSplash.Designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniHelper\IniFile.cs" />
+    <Compile Include="IniHelper\SettingHelper.cs" />
+    <Compile Include="IOHelper\AdvantechIOHelper.cs" />
+    <Compile Include="OmronFins\OmronFinsHelper.cs" />
+    <Compile Include="PageDatabaseManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageDatabaseManage.Designer.cs">
+      <DependentUpon>PageDatabaseManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageHomeSt2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageHomeSt2.Designer.cs">
+      <DependentUpon>PageHomeSt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageHomeSt1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageHomeSt1.Designer.cs">
+      <DependentUpon>PageHomeSt1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageDataChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageDataChart.Designer.cs">
+      <DependentUpon>PageDataChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PageSetting.Designer.cs">
+      <DependentUpon>PageSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password\PasswordFile.cs" />
+    <Compile Include="SinglePinDataXYZ.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Splasher\ISplashForm.cs" />
+    <Compile Include="Splasher\Splasher.cs" />
+    <Compile Include="SQLHelper\SQLHelper.cs" />
+    <Compile Include="StatisticHelper.cs" />
+    <Compile Include="strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Utility.cs" />
+    <EmbeddedResource Include="DisplayAndDataView.resx">
+      <DependentUpon>DisplayAndDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayView.resx">
+      <DependentUpon>DisplayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataGridView.resx">
+      <DependentUpon>FormDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPasswordPrompt.resx">
+      <DependentUpon>FormPasswordPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowMsg.resx">
+      <DependentUpon>FormShowMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowAsynProg.resx">
+      <DependentUpon>FormShowAsynProg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSplash.resx">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageDatabaseManage.resx">
+      <DependentUpon>PageDatabaseManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageHomeSt2.resx">
+      <DependentUpon>PageHomeSt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageHomeSt1.resx">
+      <DependentUpon>PageHomeSt1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageDataChart.resx">
+      <DependentUpon>PageDataChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageSetting.resx">
+      <DependentUpon>PageSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reject.png" />
+    <None Include="Resources\accept.png" />
+    <None Include="Resources\start.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\continue.png" />
+    <None Include="Resources\navigate-right.png" />
+    <None Include="Resources\navigate-left.png" />
+    <None Include="Resources\hide-right.png" />
+    <None Include="Resources\hide-left.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\camera setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-mode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load-from-computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run-once.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video mode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\display-setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullet-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup-restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAMERA.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CAMERA.ICO" />
+    <None Include="Resources\data_search.png" />
+    <None Include="Resources\grey_circle.png" />
+    <None Include="Resources\green_circle.png" />
+    <None Include="Resources\red_circle.png" />
+    <None Include="Resources\Station2.png" />
+    <None Include="Resources\Station1.png" />
+    <None Include="Resources\line chart.png" />
+    <None Include="Resources\bullet-grey.png" />
+    <None Include="Resources\bullet-blue.png" />
+    <None Include="Resources\bullet-black.png" />
+    <None Include="Resources\Reset-Layout.png" />
+    <None Include="Resources\V-Split.png" />
+    <None Include="Resources\H-Split.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

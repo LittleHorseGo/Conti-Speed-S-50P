@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RtTemplateName" xml:space="preserve">
+    <value>standard</value>
+  </data>
+  <data name="RtStringLanguage" xml:space="preserve">
+    <value>en (English)</value>
+  </data>
+  <data name="RtAboutButton" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="RtConfigurationButton" xml:space="preserve">
+    <value>Configuration...</value>
+  </data>
+  <data name="RtLiveImageButton" xml:space="preserve">
+    <value>Live Image</value>
+  </data>
+  <data name="RtSaveSettingsButton" xml:space="preserve">
+    <value>Save...</value>
+  </data>
+  <data name="RtRunContinuouslyButton" xml:space="preserve">
+    <value>Run Continuously</value>
+  </data>
+  <data name="RtRunOnceButton" xml:space="preserve">
+    <value>Run Once</value>
+  </data>
+  <data name="RtStopButton" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="RtCurrentLogin" xml:space="preserve">
+    <value>Current login:</value>
+  </data>
+  <data name="RtSystemOnline" xml:space="preserve">
+    <value>System is ONLINE</value>
+  </data>
+  <data name="RtSystemOffline" xml:space="preserve">
+    <value>System is OFFLINE</value>
+  </data>
+  <data name="RtOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="RtCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RtSaveSettingsTitle" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+  <data name="RtSaveSettingsText" xml:space="preserve">
+    <value>Write the current QuickBuild settings to {0}?</value>
+  </data>
+  <data name="RtSaveSettingsTextAfterConfig" xml:space="preserve">
+    <value>Write the current QuickBuild settings to {0}?  If you answer No, the settings can be saved at a later time using the {1} button.</value>
+  </data>
+  <data name="RtAccept" xml:space="preserve">
+    <value>ACCEPT</value>
+  </data>
+  <data name="RtWarning" xml:space="preserve">
+    <value>WARNING</value>
+  </data>
+  <data name="RtReject" xml:space="preserve">
+    <value>REJECT</value>
+  </data>
+  <data name="RtError" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="RtOperator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="RtSupervisor" xml:space="preserve">
+    <value>Supervisor</value>
+  </data>
+  <data name="RtAdministrator" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="RtEnterPassword" xml:space="preserve">
+    <value>Enter {0} Password</value>
+  </data>
+  <data name="RtPassword" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="RtConfirmPassword" xml:space="preserve">
+    <value>Confirm Password:</value>
+  </data>
+  <data name="RtInvalidPassword" xml:space="preserve">
+    <value>Invalid password</value>
+  </data>
+  <data name="RtInvalidPassword2" xml:space="preserve">
+    <value>The password entered is incorrect.</value>
+  </data>
+  <data name="RtAboutTitle" xml:space="preserve">
+    <value>About {0}</value>
+  </data>
+  <data name="RtUsingVpp" xml:space="preserve">
+    <value>Using .vpp file:</value>
+  </data>
+  <data name="RtUsingPasswords" xml:space="preserve">
+    <value>Using passwords.txt file:</value>
+  </data>
+  <data name="RtUsingAbout" xml:space="preserve">
+    <value>Using about.txt file:</value>
+  </data>
+  <data name="RtAppGeneratedInfo" xml:space="preserve">
+    <value>Application generated on {0} by version {1} of the Cognex Application Wizard</value>
+  </data>
+  <data name="RtNoFile" xml:space="preserve">
+    <value>&lt;none&gt;</value>
+  </data>
+  <data name="RtDefaultPasswords" xml:space="preserve">
+    <value>&lt;none: default passwords in use&gt;</value>
+  </data>
+  <data name="RtNoDetails" xml:space="preserve">
+    <value>No additional details available.</value>
+  </data>
+  <data name="RtConfigurationTitle" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="RtQuickBuild" xml:space="preserve">
+    <value>QuickBuild...</value>
+  </data>
+  <data name="RtQuickBuildTitle" xml:space="preserve">
+    <value>QuickBuild</value>
+  </data>
+  <data name="RtSetPasswords" xml:space="preserve">
+    <value>Set Passwords...</value>
+  </data>
+  <data name="RtSetPasswordsTitle" xml:space="preserve">
+    <value>Set Passwords</value>
+  </data>
+  <data name="RtAppOptions" xml:space="preserve">
+    <value>Application Options...</value>
+  </data>
+  <data name="RtAppOptionsTitle" xml:space="preserve">
+    <value>Application Options</value>
+  </data>
+  <data name="RtGroupDisplayOptions" xml:space="preserve">
+    <value>Display Options</value>
+  </data>
+  <data name="RtGroupQueueOptions" xml:space="preserve">
+    <value>Queue Options</value>
+  </data>
+  <data name="RtGroupIOOptions" xml:space="preserve">
+    <value>IO Options</value>
+  </data>
+  <data name="RtEnableDisplay" xml:space="preserve">
+    <value>Enable image display</value>
+  </data>
+  <data name="RtClearQueues" xml:space="preserve">
+    <value>Clear History Queues</value>
+  </data>
+  <data name="RtCurrentIOState" xml:space="preserve">
+    <value>Current IO state:</value>
+  </data>
+  <data name="RtOnline" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="RtOffline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="RtEnableIOAtStartup" xml:space="preserve">
+    <value>Go online at application startup</value>
+  </data>
+  <data name="RtInvalidPasswordFile" xml:space="preserve">
+    <value>Invalid password file {0}</value>
+  </data>
+  <data name="RtErrorLoadingVpp" xml:space="preserve">
+    <value>Unexpected error loading .vpp file:</value>
+  </data>
+  <data name="RtVppNotFound" xml:space="preserve">
+    <value>Vpp file not found ({0} or {1}).</value>
+  </data>
+  <data name="RtErrorSavingVpp" xml:space="preserve">
+    <value>Unexpected error saving .vpp file ({0}):</value>
+  </data>
+  <data name="RtErrorSavingVpp_Running" xml:space="preserve">
+    <value>Vpp file cannot be saved while jobs are running.</value>
+  </data>
+  <data name="RtOpenFileError" xml:space="preserve">
+    <value>Error occurred trying to open {0}:</value>
+  </data>
+  <data name="RtUnexpectedErrorQB" xml:space="preserve">
+    <value>Unexpected error -</value>
+  </data>
+  <data name="RtUninitializedAcq" xml:space="preserve">
+    <value>{0} contains an acquisition configuration that could not be initialized (due to missing camera or frame grabber, hardware in use, or a security violation).  Please correct the problem or reconfigure the acquisition properties before running the job.</value>
+  </data>
+  <data name="RtImageQueueOverrun" xml:space="preserve">
+    <value>An image queue overrun has occurred for {0}</value>
+  </data>
+  <data name="RtResultNotAvailable" xml:space="preserve">
+    <value>&lt;not available&gt;</value>
+  </data>
+  <data name="RtStatsPageTitle" xml:space="preserve">
+    <value>Job Statistics</value>
+  </data>
+  <data name="RtStatsJobResultsGroup" xml:space="preserve">
+    <value>Job Results</value>
+  </data>
+  <data name="RtStatsAcquisitionResultsGroup" xml:space="preserve">
+    <value>Acquisition Results</value>
+  </data>
+  <data name="RtStatsJobThroughputGroup" xml:space="preserve">
+    <value>Job Throughput</value>
+  </data>
+  <data name="RtStatsJobIterations" xml:space="preserve">
+    <value>Total Iterations:</value>
+  </data>
+  <data name="RtStatsJobAcceptCount" xml:space="preserve">
+    <value>Accepts:</value>
+  </data>
+  <data name="RtStatsJobRejectCount" xml:space="preserve">
+    <value>Rejects:</value>
+  </data>
+  <data name="RtStatsJobWarningCount" xml:space="preserve">
+    <value>Warnings:</value>
+  </data>
+  <data name="RtStatsJobErrorCount" xml:space="preserve">
+    <value>Errors:</value>
+  </data>
+  <data name="RtStatsPercent" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="RtStatsAcquisitions" xml:space="preserve">
+    <value>Total Acquisitions:</value>
+  </data>
+  <data name="RtStatsAcqErrorCount" xml:space="preserve">
+    <value>Errors:</value>
+  </data>
+  <data name="RtStatsAcqOverrunCount" xml:space="preserve">
+    <value>Overruns:</value>
+  </data>
+  <data name="RtStatsJobThroughput" xml:space="preserve">
+    <value>Job Throughput:</value>
+  </data>
+  <data name="RtStatsThroughput" xml:space="preserve">
+    <value>Total Throughput:</value>
+  </data>
+  <data name="RtStatsThroughputMin" xml:space="preserve">
+    <value>Min:</value>
+  </data>
+  <data name="RtStatsThroughputMax" xml:space="preserve">
+    <value>Max:</value>
+  </data>
+  <data name="RtStatsPerSecond" xml:space="preserve">
+    <value>per sec</value>
+  </data>
+  <data name="RtStatsReset" xml:space="preserve">
+    <value>Reset Statistics</value>
+  </data>
+  <data name="RtStatsResetAll" xml:space="preserve">
+    <value>Reset Statistics For All Jobs</value>
+  </data>
+  <data name="RtStatsWaiting" xml:space="preserve">
+    <value>waiting...</value>
+  </data>
+  <data name="RtStatsNA" xml:space="preserve">
+    <value>n/a</value>
+  </data>
+  <data name="RtLoadFileButton" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="RtSettingPasswordButton" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="RtStopLiveButton" xml:space="preserve">
+    <value>Stop Live</value>
+  </data>
+</root>
