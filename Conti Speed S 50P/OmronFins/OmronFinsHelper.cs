@@ -74,6 +74,28 @@ namespace Conti_Speed_S_50P
         }
 
         /// <summary>
+        /// Fins读取数据
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="dataLength"></param>
+        public short[] FinsReadData(short startAdd, short length)
+        {
+            short[] data;
+            try
+            {
+                short mSendComlet = -1;
+                mSendComlet = mOmronFins.ReadWords(PlcMemory.DM, startAdd, length, out data);
+            }
+            catch (Exception)
+            {
+                mFinsConnStatus = false;
+                throw;
+            }
+            if (mOmronFins.FinsConnected == false) mFinsConnStatus = false;
+            return data;
+        }
+
+        /// <summary>
         /// Fins发送数据
         /// </summary>
         /// <param name="data"></param>

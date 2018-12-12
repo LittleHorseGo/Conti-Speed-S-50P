@@ -85,9 +85,9 @@ namespace Conti_Speed_S_50P
             txtCurrentX.Text = x.ToString();
             txtCurrentY.Text = y.ToString();
             txtCurrentZ.Text = z.ToString();
-            txtCurrentX.ForeColor = InRange(x, POSXLOWERLIMIT, POSXUPPERLIMIT) ? Color.Green : Color.Red;
-            txtCurrentY.ForeColor = InRange(y, POSYLOWERLIMIT, POSYUPPERLIMIT) ? Color.Green : Color.Red;
-            txtCurrentZ.ForeColor = InRange(z, POSZLOWERLIMIT, POSZUPPERLIMIT) ? Color.Green : Color.Red;
+            txtCurrentX.BackColor = InRange(x, POSXLOWERLIMIT, POSXUPPERLIMIT) ? Color.Lime : Color.Tomato;
+            txtCurrentY.BackColor = InRange(y, POSYLOWERLIMIT, POSYUPPERLIMIT) ? Color.Lime : Color.Tomato;
+            txtCurrentZ.BackColor = InRange(z, POSZLOWERLIMIT, POSZUPPERLIMIT) ? Color.Lime : Color.Tomato;
         }
 
         /// <summary>

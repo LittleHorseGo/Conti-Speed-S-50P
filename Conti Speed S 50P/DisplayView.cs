@@ -184,15 +184,15 @@ namespace Conti_Speed_S_50P
                 Brush[] brushDataPoint = new Brush[10];
                 // 定义不同等级的颜色，由浅到深，共10各等级
                 // 远离中心线越远的数据点颜色越深
-                brushDataPoint[0] = new SolidBrush(Color.FromArgb(200, 200, 200));
-                brushDataPoint[1] = new SolidBrush(Color.FromArgb(180, 180, 180));
-                brushDataPoint[2] = new SolidBrush(Color.FromArgb(160, 160, 160));
-                brushDataPoint[3] = new SolidBrush(Color.FromArgb(140, 140, 140));
-                brushDataPoint[4] = new SolidBrush(Color.FromArgb(120, 120, 120));
-                brushDataPoint[5] = new SolidBrush(Color.FromArgb(100, 100, 100));
-                brushDataPoint[6] = new SolidBrush(Color.FromArgb(90, 90, 90));
-                brushDataPoint[7] = new SolidBrush(Color.FromArgb(80, 80, 80));
-                brushDataPoint[8] = new SolidBrush(Color.FromArgb(70, 70, 70));
+                brushDataPoint[0] = new SolidBrush(Color.FromArgb(240, 240, 240));
+                brushDataPoint[1] = new SolidBrush(Color.FromArgb(230, 230, 230));
+                brushDataPoint[2] = new SolidBrush(Color.FromArgb(220, 220, 220));
+                brushDataPoint[3] = new SolidBrush(Color.FromArgb(210, 210, 210));
+                brushDataPoint[4] = new SolidBrush(Color.FromArgb(200, 200, 200));
+                brushDataPoint[5] = new SolidBrush(Color.FromArgb(180, 180, 180));
+                brushDataPoint[6] = new SolidBrush(Color.FromArgb(150, 150, 150));
+                brushDataPoint[7] = new SolidBrush(Color.FromArgb(120, 120, 120));
+                brushDataPoint[8] = new SolidBrush(Color.FromArgb(90, 90, 90));
                 brushDataPoint[9] = new SolidBrush(Color.FromArgb(60, 60, 60));
 
                 Brush brushDataOutofSpec = new SolidBrush(Color.OrangeRed);
@@ -244,19 +244,17 @@ namespace Conti_Speed_S_50P
                         //    PosZ[i] < PosZLowerLimit || PosZ[i] > PosZUpperLimit)
                         if (PosZ[i] < PosZLowerLimit || PosZ[i] > PosZUpperLimit)
                         {
-                            // 圆形中填充颜色
+                            // 圆形中填充红色
                             g.FillEllipse(brushDataOutofSpec, r);
                         }
-                        else if (PosZ[i] >= valuePerfectLow && PosZ[i] <= valuePerfectHigh)
-                        {
-                            // 圆形中填充颜色
-                            g.FillEllipse(brushDataPerfect, r);
-                        }
+                        //else if (PosZ[i] >= valuePerfectLow && PosZ[i] <= valuePerfectHigh)
+                        //{
+                        //    // 圆形中填充颜色
+                        //    g.FillEllipse(brushDataPerfect, r);
+                        //}
                         else
                         {
-                            colorLevel = (int)((Math.Abs((double)PosZ[i]) -
-                                (valuePerfectHigh - valuePerfectLow) / 2) * 20 /
-                                ((PosZUpperLimit - PosZLowerLimit) - (valuePerfectHigh - valuePerfectLow)));
+                            colorLevel = (int)(Math.Abs((double)PosZ[i]) * 20 / (PosZUpperLimit - PosZLowerLimit));
                             if (colorLevel < 0) colorLevel = 0;
                             if (colorLevel > 9) colorLevel = 9;
                             // 圆形中填充颜色

@@ -52,7 +52,7 @@ namespace Conti_Speed_S_50P
 
         private AllPinDataXYZ allPins1 = new AllPinDataXYZ(); // 当次测量数据
         private short[] outputData1;
-        private short[] currentOutputData1; // 当前工位St2反馈数据
+        private short[] currentOutputData1; // 当前工位St1反馈数据
         private List<AllPinDataXYZ> pinOrigDataSt1 = new List<AllPinDataXYZ>(); // 原始数据
 
         private AllPinDataXYZ allPins2 = new AllPinDataXYZ(); // 当次测量数据
@@ -252,14 +252,60 @@ namespace Conti_Speed_S_50P
             currentOutputData1 = new short[PINNUM * 3];
             outputData2 = new short[PINNUM * 3];
             currentOutputData2 = new short[PINNUM * 3];
-
             // 默认情况下反馈数据为0
             for (int i = 0; i < PINNUM * 3; i++)
             {
                 outputData1[i] = 0;
                 outputData2[i] = 0;
-                currentOutputData1[i] = 0;
-                currentOutputData2[i] = 0;
+            }
+            try
+            {
+                // 从配置文件中读取上次保存的数据，作为初始值
+                string strTemp = ConfigIniFile.IniReadValue("PLCData", "Data1");
+                // 如果为空，则初始值为0
+                if (string.IsNullOrEmpty(strTemp))
+                {
+                    // 默认情况下反馈数据为0
+                    for (int i = 0; i < PINNUM * 3; i++)
+                    {
+                        currentOutputData1[i] = 0;
+                    }
+                }
+                // 如果不为空，通过逗号分隔符读取75个数据作为初始值
+                else
+                {
+                    string[] strArray = strTemp.Split(',');
+                    // 默认情况下反馈数据为0
+                    for (int i = 0; i < PINNUM * 3; i++)
+                    {
+                        currentOutputData1[i] = Convert.ToInt16(strArray[i]);
+                    }
+                }
+                // 从配置文件中读取上次保存的数据，作为初始值
+                strTemp = ConfigIniFile.IniReadValue("PLCData", "Data2");
+                // 如果为空，则初始值为0
+                if (string.IsNullOrEmpty(strTemp))
+                {
+                    // 默认情况下反馈数据为0
+                    for (int i = 0; i < PINNUM * 3; i++)
+                    {
+                        currentOutputData2[i] = 0;
+                    }
+                }
+                // 如果不为空，通过逗号分隔符读取75个数据作为初始值
+                else
+                {
+                    string[] strArray = strTemp.Split(',');
+                    // 默认情况下反馈数据为0
+                    for (int i = 0; i < PINNUM * 3; i++)
+                    {
+                        currentOutputData2[i] = Convert.ToInt16(strArray[i]);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("检查配置文件中[PLCData]字段中数据是否合法！");
             }
         }
 
@@ -480,28 +526,6 @@ namespace Conti_Speed_S_50P
         }
         #endregion
 
-        #region Receive message from another application
-        //接收消息方法
-        protected override void WndProc(ref System.Windows.Forms.Message e)
-        {
-            if (e.Msg == WM_COPYDATA)
-            {
-                CopyDataStruct cds = (CopyDataStruct)e.GetLParam(typeof(CopyDataStruct));
-                strReceivedData = cds.lpData.ToString();
-                string[] strDataAll;
-                short[] outputData = new short[PINNUM * 3];
-                char[] charSeparatorsOnePin = new char[] { ';' };
-                strDataAll = strReceivedData.Split(charSeparatorsOnePin, StringSplitOptions.RemoveEmptyEntries);
-                for (int i = 0; i < PINNUM * 3; i++)
-                {
-                    outputData[i] = Convert.ToInt16(strDataAll[i]);
-                }
-                bgwFinsTotalResultSenderSt2.RunWorkerAsync(outputData);
-            }
-            base.WndProc(ref e);
-        }
-        #endregion
-
         #region Backgroundworker to retrive data from SQL Server Database
         private void InitSQLServerConnection()
         {
@@ -621,6 +645,9 @@ namespace Conti_Speed_S_50P
                                 {
                                     currentOutputData1[i] += outputData1[i];
                                 }
+                                // 保存数据到配置文件中，作为软件下次启动的初始值
+                                SavePLCDataToConfigFile(1, currentOutputData1);
+                                // 后台线程发送Fins数据给1#号机台PLC
                                 bgwFinsTotalResultSenderSt1.RunWorkerAsync(currentOutputData1);
                             }
                         }
@@ -687,6 +714,9 @@ namespace Conti_Speed_S_50P
                                 {
                                     currentOutputData2[i] += outputData2[i];
                                 }
+                                // 保存数据到配置文件中，作为软件下次启动的初始值
+                                SavePLCDataToConfigFile(2, currentOutputData2);
+                                // 发送消息给后台软件，后台软件通过线程发送Fins数据给2#号机台PLC
                                 SendMsgToSt2OmronPLC(currentOutputData2);
                             }
                         }
@@ -778,6 +808,23 @@ namespace Conti_Speed_S_50P
                     _homeSt2.UpdateOutputData(i, outputData2[PINNUM + i], outputData2[PINNUM * 2 + i], outputData2[i]);
                 }
             }
+        }
+
+        /// <summary>
+        /// 保存要发送给PLC的数据，作为下次软件启动时的初始值
+        /// </summary>
+        /// <param name="index">PLC编号，1或者2</param>
+        /// <param name="data">short型数组，大小为75个</param>
+        private void SavePLCDataToConfigFile(int index, short[] data)
+        {
+            StringBuilder sb = new StringBuilder(200);
+            foreach (short item in data)
+            {
+                sb.Append(item.ToString());
+                sb.Append(",");
+            }
+            sb.Remove(sb.Length - 1, 1);
+            ConfigIniFile.IniWriteValue("PLCData", "Data" + index, sb.ToString());
         }
         #endregion
 
