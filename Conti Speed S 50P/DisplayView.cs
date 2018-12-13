@@ -216,7 +216,7 @@ namespace Conti_Speed_S_50P
                     if (x < 0) x = 0;
                     if (x > picBoxView.Width) x = picBoxView.Width;
                     if (y < 0) y = 0;
-                    if (y > picBoxView.Height) x = picBoxView.Height;
+                    if (y > picBoxView.Height) y = picBoxView.Height;
 
                     // 计算画点的区域
                     Rectangle r;
@@ -236,7 +236,7 @@ namespace Conti_Speed_S_50P
                     }
 
                     // 判断坐标是否在pictureBox的范围内
-                    if (x >= 0 && x <= picBoxView.Width && y >= 0 && y <= picBoxView.Width)
+                    if (x >= 0 && x <= picBoxView.Width && y >= 0 && y <= picBoxView.Height)
                     {
                         // 判断数值是否超出spec
                         //if (PosX[i] < PosXLowerLimit || PosX[i] > PosXUpperLimit ||
