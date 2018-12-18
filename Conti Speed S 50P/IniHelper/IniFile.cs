@@ -64,9 +64,9 @@ namespace Conti_Speed_S_50P
         /// <returns></returns>
         public string IniReadValue(string Section, string Key)
         {
-            StringBuilder temp = new StringBuilder(255);
+            StringBuilder temp = new StringBuilder(500);
             int i = GetPrivateProfileString(Section, Key, "", temp,
-                                            255, this.path);
+                                            500, this.path);
             return temp.ToString();
 
         }
