@@ -26,12 +26,15 @@ namespace Conti_Speed_S_50P
             txtZLowerLimit.Text = FormMain.mSettingHelper.PosZLowerLimit.ToString();
             txtZUpperLimit.Text = FormMain.mSettingHelper.PosZUpperLimit.ToString();
 
+            cmbXDirection.Items.Clear();
             cmbXDirection.Items.Add("正");
             cmbXDirection.Items.Add("反");
             cmbXDirection.SelectedIndex = FormMain.mSettingHelper.OutputXDirection ? 0 : 1;
+            cmbYDirection.Items.Clear();
             cmbYDirection.Items.Add("正");
             cmbYDirection.Items.Add("反");
             cmbYDirection.SelectedIndex = FormMain.mSettingHelper.OutputYDirection ? 0 : 1;
+            cmbZDirection.Items.Clear();
             cmbZDirection.Items.Add("正");
             cmbZDirection.Items.Add("反");
             cmbZDirection.SelectedIndex = FormMain.mSettingHelper.OutputZDirection ? 0 : 1;
@@ -39,7 +42,7 @@ namespace Conti_Speed_S_50P
             txtOutputRatio.Text = FormMain.mSettingHelper.OutputRatio.ToString();
 
             txtXPerfectLower.Text = FormMain.mSettingHelper.OutputXPerfectLowerLimit.ToString();
-            txtXPerfectLower.Text = FormMain.mSettingHelper.OutputXPerfectUpperLimit.ToString();
+            txtXPerfectUpper.Text = FormMain.mSettingHelper.OutputXPerfectUpperLimit.ToString();
             txtYPerfectLower.Text = FormMain.mSettingHelper.OutputYPerfectLowerLimit.ToString();
             txtYPerfectUpper.Text = FormMain.mSettingHelper.OutputYPerfectUpperLimit.ToString();
             txtZPerfectLower.Text = FormMain.mSettingHelper.OutputZPerfectLowerLimit.ToString();
